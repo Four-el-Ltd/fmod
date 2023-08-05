@@ -6,12 +6,6 @@
 			<attribute name="gradle_used_by_scope" value="main,test,client"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/main" path="src/main/kotlin">
-		<attributes>
-			<attribute name="gradle_scope" value="main"/>
-			<attribute name="gradle_used_by_scope" value="main,test,client"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="src" output="bin/main" path="src/main/resources">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
@@ -19,12 +13,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" output="bin/client" path="src/client/java">
-		<attributes>
-			<attribute name="gradle_scope" value="client"/>
-			<attribute name="gradle_used_by_scope" value="client"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" output="bin/client" path="src/client/kotlin">
 		<attributes>
 			<attribute name="gradle_scope" value="client"/>
 			<attribute name="gradle_used_by_scope" value="client"/>
