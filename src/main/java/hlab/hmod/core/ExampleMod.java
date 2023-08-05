@@ -12,6 +12,8 @@ import io.wispforest.owo.itemgroup.OwoItemGroup;
 import io.wispforest.owo.itemgroup.Icon;
 import io.wispforest.owo.registration.reflect.FieldRegistrationHandler;
 
+import hlab.hmod.core.items.ModItems;
+
 public class ExampleMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -28,5 +30,6 @@ public class ExampleMod implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 		INSTRUMENTS_GROUP.initialize();
+		FieldRegistrationHandler.register(ModItems.class, "hmod", false);
 	}
 }
