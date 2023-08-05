@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "hmod-core",
+	"version": "${version}",
+	"name": "hmod-core",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/hmod-core/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"hlab.hmod.core.ExampleMod"
+		],
+		"client": [
+			"hlab.hmod.core.ExampleModClient"
+		],
+		"fabric-datagen": [
+			"hlab.hmod.core.ExampleModDataGenerator"
+		]
+	},
+	"mixins": [
+		"hmod-core.mixins.json",
+		{
+			"config": "hmod-core.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
