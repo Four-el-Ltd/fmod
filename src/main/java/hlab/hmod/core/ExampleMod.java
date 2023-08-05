@@ -28,7 +28,7 @@ public class ExampleMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Прочитал - гей");
 		INSTRUMENTS_GROUP.initialize();
 		FieldRegistrationHandler.register(ModItems.class, "hmod", false);
 	}
