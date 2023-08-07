@@ -19,6 +19,7 @@ public class ExampleMod implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("hmod-core");
+	public static final String MODID = "hmod-core";
 	public static final OwoItemGroup INSTRUMENTS_GROUP = OwoItemGroup.builder(new Identifier("hmod", "instruments"),
 			() -> Icon.of(new ItemStack(Items.IRON_PICKAXE))).build();
 
