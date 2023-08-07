@@ -12,6 +12,10 @@ base {
 
 repositories {
 	maven { url 'https://maven.wispforest.io' }
+	maven {
+        name = "FelNull Maven"
+        url = "https://maven.felnull.dev"
+    }
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -54,6 +58,8 @@ sourceSets {
 }
 dependencies {
 	annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
+
+	modApi "dev.felnull:special-model-loader:1.1.0"
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
