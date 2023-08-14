@@ -31,6 +31,6 @@ public class ExampleMod implements ModInitializer {
 
 		LOGGER.info("Прочитал - гей");
 		INSTRUMENTS_GROUP.initialize();
-		FieldRegistrationHandler.register(ModItems.class, "hmod-core", false);
+		FieldRegistrationHandler.register(ModItems.class, MODID, false);
 	}
 }

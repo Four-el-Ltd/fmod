@@ -12,10 +12,13 @@ public interface IEnergyConnector {
 
   public long getMaxPower();
 
-  public default void tryConnect(World world, int x, int y, int z) {
+  public default void trySubscribe(World world, int x, int y, int z) {
     final BlockEntity be = world.getBlockEntity(new BlockPos(x, y, z));
-    if (be instanceof IEnergyConnector) {
-      IEnergyConnector con = (IEnergyConnector) be;
+    if (be instanceof IEnergyConductor) {
+      IEnergyConductor con = (IEnergyConductor) be;
+      if (con.getPowerNet() != null) {
+        con.getPowerNet().subscribe(this);
+      }
     }
   }
 }
