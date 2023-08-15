@@ -15,9 +15,6 @@ import io.wispforest.owo.registration.reflect.FieldRegistrationHandler;
 import hlab.hmod.core.items.ModItems;
 
 public class ExampleMod implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("hmod-core");
 	public static final String MODID = "hmod-core";
 	public static final OwoItemGroup INSTRUMENTS_GROUP = OwoItemGroup.builder(new Identifier("hmod", "instruments"),
@@ -25,11 +22,7 @@ public class ExampleMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Прочитал - гей");
+		LOGGER.info("H-mod started");
 		INSTRUMENTS_GROUP.initialize();
 		FieldRegistrationHandler.register(ModItems.class, MODID, false);
 	}

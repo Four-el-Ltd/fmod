@@ -12,6 +12,8 @@ public interface IEnergyConnector {
 
   public long getMaxPower();
 
+  public long getTransferWeight();
+
   public default void trySubscribe(World world, int x, int y, int z) {
     final BlockEntity be = world.getBlockEntity(new BlockPos(x, y, z));
     if (be instanceof IEnergyConductor) {
