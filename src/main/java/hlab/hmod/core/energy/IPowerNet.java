@@ -22,9 +22,7 @@ public interface IPowerNet {
 
   public void destroy();
 
-  public void reevaluate();
+  // public void reevaluate();
 
   public long transferPower(long power);
-
-  public BigInteger getTotalTransfered();
 }
