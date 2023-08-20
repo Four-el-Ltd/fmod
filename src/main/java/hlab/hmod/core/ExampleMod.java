@@ -13,6 +13,7 @@ import io.wispforest.owo.itemgroup.Icon;
 import io.wispforest.owo.registration.reflect.FieldRegistrationHandler;
 
 import hlab.hmod.core.items.ModItems;
+import hlab.hmod.core.world.dimensions.ModDimensions;
 
 public class ExampleMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("hmod-core");
@@ -22,8 +23,17 @@ public class ExampleMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		/*
+		 * while (true) {
+		 * Math.acos(Math.asin(Math.atan(Math.random() * 100 - 2 + 1)));
+		 * }
+		 */
+
 		LOGGER.info("H-mod started");
 		INSTRUMENTS_GROUP.initialize();
 		FieldRegistrationHandler.register(ModItems.class, MODID, false);
+
+		ModDimensions.register();
+
 	}
 }

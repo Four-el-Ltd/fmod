@@ -1,5 +1,6 @@
 package hlab.hmod.core.mixin;
 
+import hlab.hmod.core.*;
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -10,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ExampleMixin {
 	@Inject(at = @At("HEAD"), method = "loadWorld")
 	private void init(CallbackInfo info) {
-		System.exit(-1);
-		// This code is injected into the start of MinecraftServer.loadWorld()V
+		ExampleMod.LOGGER.info("Этава самое; мир кажется запустился");
 	}
 }
