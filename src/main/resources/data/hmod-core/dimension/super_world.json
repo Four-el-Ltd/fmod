@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:overworld",
+  "type": "hmod-core:super_world",
   "generator": {
     "type": "minecraft:noise",
     "settings": "minecraft:overworld",
