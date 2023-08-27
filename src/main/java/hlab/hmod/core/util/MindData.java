@@ -13,7 +13,7 @@ import net.minecraft.network.packet.s2c.play.CustomPayloadS2CPacket;
 public class MindData {
 
   public static int addMind(IEntityModNbtSaver player, int value) {
-    NbtCompound nbt = player.getHmodData();
+    NbtCompound nbt = player.getPersistanceData();
     int mind = nbt.getInt("mind");
     if (mind + value >= 50) {
       mind = 50;
@@ -26,7 +26,7 @@ public class MindData {
   }
 
   public static int removeMind(IEntityModNbtSaver player, int value) {
-    NbtCompound nbt = player.getHmodData();
+    NbtCompound nbt = player.getPersistanceData();
     int mind = nbt.getInt("mind");
     if (mind - value < 0) {
       mind = 0;

@@ -4,5 +4,5 @@ import net.minecraft.nbt.NbtCompound;
 
 public interface IEntityModNbtSaver {
 
-  NbtCompound getHmodData();
+  NbtCompound getPersistanceData();
 }

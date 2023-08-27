@@ -18,7 +18,7 @@ import hlab.hmod.core.world.dimensions.ModDimensions;
 public class ExampleMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("hmod-core");
 	public static final String MODID = "hmod-core";
-	public static final OwoItemGroup INSTRUMENTS_GROUP = OwoItemGroup.builder(new Identifier("hmod", "instruments"),
+	public static final OwoItemGroup INSTRUMENTS_GROUP = OwoItemGroup.builder(new Identifier(MODID, "instruments"),
 			() -> Icon.of(new ItemStack(Items.IRON_PICKAXE))).build();
 
 	@Override

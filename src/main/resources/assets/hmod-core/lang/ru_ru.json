@@ -1,5 +1,8 @@
 {
   "item.hmod-core.debugpick": [
     {"text": "Ахуенная кирка", "color": "red"}
+  ],
+  "itemGroup.hmod-core.instruments": [
+    {"text": "Тестовая вкладка", "color": "blue"}
   ]
 }
