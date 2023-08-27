@@ -1,14 +1,17 @@
+
 package hlab.hmod.core.util;
 
-import hlab.hmod.core.network.ModPackets;
+import hlab.hmod.core.network.SyncHandler;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.packet.s2c.play.CustomPayloadS2CPacket;
 
 public class MindData {
+
   public static int addMind(IEntityModNbtSaver player, int value) {
     NbtCompound nbt = player.getHmodData();
     int mind = nbt.getInt("mind");
@@ -18,6 +21,7 @@ public class MindData {
       mind += value;
     }
     nbt.putInt("mind", mind);
+    syncMind(mind, (ServerPlayerEntity) player);
     return mind;
   }
 
@@ -30,12 +34,13 @@ public class MindData {
       mind -= value;
     }
     nbt.putInt("mind", mind);
+    syncMind(mind, (ServerPlayerEntity) player);
     return mind;
   }
 
   public static void syncMind(int mind, ServerPlayerEntity player) {
     PacketByteBuf buf = PacketByteBufs.create();
     buf.writeInt(mind);
-    ServerPlayNetworking.send(player, ModPackets.MIND_SYNC_ID, buf);
+    player.networkHandler.sendPacket(new CustomPayloadS2CPacket(SyncHandler.MIND_SYNC_ID, buf));
   }
 }

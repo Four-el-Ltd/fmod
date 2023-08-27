@@ -19,7 +19,7 @@
 			"hlab.hmod.core.ExampleMod"
 		],
 		"client": [
-
+			"hlab.hmod.core.ExampleModClient"
 		],
 		"fabric-datagen": [
 			"hlab.hmod.core.ExampleModDataGenerator"
@@ -36,8 +36,7 @@
 		"fabricloader": ">=0.14.22",
 		"minecraft": "~1.20",
 		"java": ">=17",
-		"fabric-api": "*",
-		"fabric-networking-api-v1": "*"
+		"fabric-api": "*"
 	},
 	"suggests": {
 		"another-mod": "*"

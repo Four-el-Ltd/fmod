@@ -24,12 +24,12 @@ repositories {
 }
 
 loom {
-    splitEnvironmentSourceSets()
+
 
 	mods {
 		"hmod-core" {
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
+			sourceSet sourceSets.main
 		}
 	}
     runs {
