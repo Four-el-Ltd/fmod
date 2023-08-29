@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import io.wispforest.owo.itemgroup.OwoItemGroup;
 import io.wispforest.owo.itemgroup.Icon;
 import io.wispforest.owo.registration.reflect.FieldRegistrationHandler;
-
+import hlab.hmod.core.blocks.ModBlocks;
 import hlab.hmod.core.items.ModItems;
 import hlab.hmod.core.world.dimensions.ModDimensions;
 
@@ -32,6 +32,7 @@ public class ExampleMod implements ModInitializer {
 		LOGGER.info("H-mod started");
 		INSTRUMENTS_GROUP.initialize();
 		FieldRegistrationHandler.register(ModItems.class, MODID, false);
+		FieldRegistrationHandler.register(ModBlocks.class, MODID, false);
 
 		ModDimensions.register();
 
