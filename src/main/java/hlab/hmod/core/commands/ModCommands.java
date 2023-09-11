@@ -23,14 +23,14 @@ import net.minecraft.server.network.ServerPlayerEntity;
 public class ModCommands {
 
   public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-    dispatcher.register(literal("setSanity")
-        .then(argument("amount", integer(0, 20)))
-        .executes(ctx -> {
-          PlayerEntity player = ctx.getSource().getPlayer();
-          SanityManager sm = ((SanityManagerAccesor) player).getSanityManager();
-          sm.setSanity(getInteger(ctx, "amount"));
-          return 1;
+    dispatcher.register(literal("setsanity")
+        .then(argument("amount", integer(0, 20))
+            .executes(ctx -> {
+              PlayerEntity player = ctx.getSource().getPlayer();
+              SanityManager sm = ((SanityManagerAccesor) player).getSanityManager();
+              sm.setSanity(getInteger(ctx, "amount"));
+              return 1;
 
-        }));
+            })));
   }
 }

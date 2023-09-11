@@ -37,7 +37,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements SanityMa
   }
 
   @Inject(method = "tick()V", at = @At(value = "RETURN"))
-  public void hmod$UpdateSanity() {
+  public void hmod$UpdateSanity(CallbackInfo ci) {
     PlayerEntity player = (PlayerEntity) (Object) this;
     this.sanityManager.update(player);
   }
