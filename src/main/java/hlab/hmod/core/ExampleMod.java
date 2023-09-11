@@ -34,7 +34,12 @@ public class ExampleMod implements ModInitializer {
 		FieldRegistrationHandler.register(ModItems.class, MODID, false);
 		FieldRegistrationHandler.register(ModBlocks.class, MODID, false);
 
-		ModDimensions.register();
+		try {
+			ModDimensions.register();
+		} catch (Exception e) {
+			LOGGER.error("Возникла ашибка при регистрации измерений. ошибка: " + e);
+			System.exit(-1);
+		}
 
 	}
 }
