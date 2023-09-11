@@ -19,6 +19,7 @@ import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 
 public class ModCommands {
 
@@ -29,6 +30,7 @@ public class ModCommands {
               PlayerEntity player = ctx.getSource().getPlayer();
               SanityManager sm = ((SanityManagerAccesor) player).getSanityManager();
               sm.setSanity(getInteger(ctx, "amount"));
+              ctx.getSource().sendMessage(Text.of("Команд компмлитет епта"));
               return 1;
 
             })));
