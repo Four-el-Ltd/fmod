@@ -23,12 +23,23 @@ public abstract class PlayerEntityMixin extends LivingEntity implements SanityMa
 
   @Inject(method = "writeCustomDataToNbt", at = @At(value = "RETURN"))
   public void hmod$writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
+    this.sanityManager.writeNbt(nbt);
+  }
 
+  @Inject(method = "readCustomDataFromNbt", at = @At(value = "RETURN"))
+  public void hmod$readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
+    this.sanityManager.readNbt(nbt);
   }
 
   @Override
   public SanityManager getSanityManager() {
     return this.sanityManager;
+  }
+
+  @Inject(method = "tick()V", at = @At(value = "RETURN"))
+  public void hmod$UpdateSanity() {
+    PlayerEntity player = (PlayerEntity) (Object) this;
+    this.sanityManager.update(player);
   }
 
 }

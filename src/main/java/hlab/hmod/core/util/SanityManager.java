@@ -27,8 +27,13 @@ public class SanityManager {
   }
 
   public void update(PlayerEntity player) {
+    if (player.isCreative()) {
+      this.sanityLevel = 20;
+      return;
+    }
     if (this.sanityLevel == 0) {
       player.kill();
+      return;
     }
   }
 }
