@@ -45,16 +45,16 @@ public class SanityManager {
     }
     if (this.sanityLevel == 0) {
       player.addStatusEffect(
-          new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecraft", "blindneas")), 20));
+          new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecraft", "blindness")), 20));
       return;
     }
     if (this.timerDark > 120 && this.sanityLevel > 0) {
       this.sanityLevel--;
       this.timerDark = 0;
-    } else {
+    } else if (this.sanityLevel == 0) {
       this.timerDark = 0;
-      return;
     }
+
     if (player.getWorld().getLightLevel(player.getBlockPos()) <= 1) {
       this.timerDark++;
     }
