@@ -16,16 +16,45 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class SanityManager {
-  public int sanityLevel = 20;
+  private int sanityLevel = 20;
   private int timerDark = 0;
   private int timerCamp = 0;
+  private int maxSanity = 20;
+
+  public int getSanityLevel() {
+    return this.sanityLevel;
+  }
+
+  public int getMaxSanity() {
+    return this.maxSanity;
+  }
+
+  public void setMaxSanity(int amount) {
+    this.maxSanity = amount;
+  }
+
+  public void addMaxSanity(int amount) {
+    this.maxSanity += amount;
+  }
+
+  public void removeMaxSanity(int amount) {
+    this.maxSanity -= amount;
+  }
 
   public void addSanity(int amount) {
-    this.sanityLevel = Math.min(amount + this.sanityLevel, 20);
+    this.sanityLevel = Math.min(amount + this.sanityLevel, maxSanity);
+  }
+
+  public void removeSanity(int amount) {
+    this.sanityLevel = Math.max(this.sanityLevel - amount, 0);
   }
 
   public void setSanity(int amount) {
-    this.sanityLevel = amount;
+    if (amount <= 0) {
+      this.sanityLevel = 0;
+      return;
+    }
+    this.sanityLevel = Math.min(amount, maxSanity);
   }
 
   public void writeNbt(NbtCompound nbt) {
@@ -41,7 +70,7 @@ public class SanityManager {
 
   public void update(PlayerEntity player) {
     if (player.isCreative()) {
-      this.sanityLevel = 20;
+      this.setSanity(this.maxSanity);
       return;
     }
     if (this.sanityLevel == 0) {
@@ -50,7 +79,7 @@ public class SanityManager {
       return;
     }
     if (this.timerDark > 120 && this.sanityLevel > 0) {
-      this.sanityLevel--;
+      this.removeSanity(1);
       this.timerDark = 0;
     } else if (this.sanityLevel == 0) {
       this.timerDark = 0;
@@ -70,7 +99,7 @@ public class SanityManager {
             this.timerCamp++;
             if (this.timerCamp > 120) {
               this.timerCamp = 0;
-              this.sanityLevel++;
+              this.addSanity(1);
             }
             break;
           }
