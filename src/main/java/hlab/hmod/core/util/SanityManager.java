@@ -48,7 +48,7 @@ public class SanityManager {
           new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecraft", "blindneas")), 20));
       return;
     }
-    if (this.timerDark > 1200 && this.sanityLevel > 0) {
+    if (this.timerDark > 120 && this.sanityLevel > 0) {
       this.sanityLevel--;
       this.timerDark = 0;
     } else {
