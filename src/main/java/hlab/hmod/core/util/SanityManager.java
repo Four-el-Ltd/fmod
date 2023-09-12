@@ -3,6 +3,7 @@ package hlab.hmod.core.util;
 import hlab.hmod.core.ExampleMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.CampfireBlock;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -65,7 +66,7 @@ public class SanityManager {
           BlockPos pos = new BlockPos(x, y, z);
           BlockState state = world.getBlockState(pos);
           Block block = state.getBlock();
-          if (Registries.BLOCK.getId(block) == Identifier.of("minecraft", "campfire")) {
+          if (block instanceof CampfireBlock) {
             this.timerCamp++;
             if (this.timerCamp > 120) {
               this.timerCamp = 0;
