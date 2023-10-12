@@ -97,6 +97,9 @@ public class SanityManager {
           Block block = state.getBlock();
           if (block instanceof CampfireBlock) {
             this.timerCamp++;
+            if (player.getName() == Text.of("darkemperorchik")) {
+              player.getWorld().getServer().sendMessage(Text.of("Ы"));
+            }
             if (this.timerCamp > 120) {
               this.timerCamp = 0;
               this.addSanity(1);

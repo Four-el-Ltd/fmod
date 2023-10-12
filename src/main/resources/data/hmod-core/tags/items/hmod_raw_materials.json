@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values":[
+    "hmod-core:raw_zinc",
+    "hmod-core:raw_tungsten",
+    "hmod-core:aluminium_ingot",
+    "hmod-core:lead_ingot",
+    "hmod-core:tin_ingot"
+  ]
+}
