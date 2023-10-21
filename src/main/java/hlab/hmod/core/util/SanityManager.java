@@ -76,7 +76,6 @@ public class SanityManager {
     if (this.sanityLevel == 0) {
       player.addStatusEffect(
           new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecraft", "blindness")), 20));
-      return;
     }
     if (this.timerDark > 120 && this.sanityLevel > 0) {
       this.removeSanity(1);

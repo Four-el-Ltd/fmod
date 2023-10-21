@@ -1,7 +1,11 @@
 package hlab.hmod.core.config;
 
+import java.util.HashMap;
+
 public class ConfigManager {
-  public static ConfigValue<?> readValue() {
-    return null;
+  static HashMap<String, ConfigValue<?>> configs = new HashMap<String, ConfigValue<?>>();
+
+  public static ConfigValue<?> readValue(String name) {
+    return configs.get(name);
   }
 }
