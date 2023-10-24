@@ -13,8 +13,8 @@ public class SyncSanityS2C {
   public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf,
       PacketSender responseSender) {
     int sanityLevel = buf.readInt();
-    PlayerEntity a = (PlayerEntity) client.player;
-    SanityManager b = ((PlayerEntityMixin) (Object) a).getSanityManager();
-    b.setSanity(sanityLevel);
+    PlayerEntity player = (PlayerEntity) client.player;
+    SanityManager sanityManager = ((PlayerEntityMixin) (Object) player).getSanityManager();
+    sanityManager.setSanity(sanityLevel);
   }
 }
