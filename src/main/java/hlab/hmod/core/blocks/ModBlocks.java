@@ -1,5 +1,6 @@
 package hlab.hmod.core.blocks;
 
+import hlab.hmod.core.blocks.generic.ores.TinOre;
 import io.wispforest.owo.registration.reflect.BlockRegistryContainer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -23,6 +24,8 @@ public class ModBlocks implements BlockRegistryContainer {
       return BlockRenderType.INVISIBLE;
     }
   };
+
+  public static final TinOre tin_ore = new TinOre(FabricBlockSettings.create());
 
   @Override
   public BlockItem createBlockItem(Block block, String identifier) {
