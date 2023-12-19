@@ -9,7 +9,6 @@ import hlab.hmod.core.ExampleMod;
 import hlab.hmod.core.items.*;
 import hlab.hmod.core.items.guns.GunItem;
 import hlab.hmod.core.items.materials.GodToolMaterial;
-import hlab.hmod.core.items.rawores.TinRawOre;
 
 public class ModItems implements ItemRegistryContainer {
   public static final Item debugpick = new MyPickaxeItem(GodToolMaterial.INSTANCE, 4, 1.0f,
@@ -22,7 +21,7 @@ public class ModItems implements ItemRegistryContainer {
   public static final Item raw_tungsten = new Item(new OwoItemSettings());
   public static final Item raw_aluminium = new Item(new OwoItemSettings());
   public static final Item raw_lead = new Item(new OwoItemSettings());
-  public static final Item raw_tin = new TinRawOre(new OwoItemSettings());
+  public static final Item raw_tin = new Item(new OwoItemSettings());
   public static final Item zinc_ingot = new Item(new OwoItemSettings());
   public static final Item tungsten_ingot = new Item(new OwoItemSettings());
   public static final Item aluminium_ingot = new Item(new OwoItemSettings());
