@@ -8,6 +8,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import hlab.hmod.core.network.ModPackets;
 import hlab.hmod.core.util.SanityManager;
 import hlab.hmod.core.util.SanityManagerAccesor;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.EntityType;
@@ -41,6 +43,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements SanityMa
     return this.sanityManager;
   }
 
+  @Environment(EnvType.SERVER)
   @Inject(method = "tick()V", at = @At(value = "RETURN"))
   public void hmod$UpdateSanity(CallbackInfo ci) {
     PlayerEntity player = (PlayerEntity) (Object) this;
