@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +26,7 @@ public class ModBlocks implements BlockRegistryContainer {
     }
   };
 
-  public static final TinOre tin_ore = new TinOre(FabricBlockSettings.create());
+  public static final TinOre tin_ore = new TinOre(FabricBlockSettings.create().requiresTool());
 
   @Override
   public BlockItem createBlockItem(Block block, String identifier) {
