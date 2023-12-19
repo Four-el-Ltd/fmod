@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "group": "iron_ingot",
+  "ingredient": {
+    "item": "hmod-core:raw_tin"
+  },
+  "result": "hmod-core:tin_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}
+
