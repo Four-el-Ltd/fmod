@@ -11,20 +11,21 @@ import hlab.hmod.core.items.guns.GunItem;
 import hlab.hmod.core.items.materials.GodToolMaterial;
 
 public class ModItems implements ItemRegistryContainer {
+  private static OwoItemSettings settMat = new OwoItemSettings().group(ExampleMod.MATERIALS_GROUP);
   public static final Item debugpick = new MyPickaxeItem(GodToolMaterial.INSTANCE, 4, 1.0f,
       new OwoItemSettings().fireproof().group(ExampleMod.INSTRUMENTS_GROUP).rarity(Rarity.EPIC), true);
   public static final Item a = new Item(new OwoItemSettings());
   public static final GunItem xyi = new GunItem(new OwoItemSettings(), 100, 10000);
   public static final Item stick = new SwordItem(GodToolMaterial.INSTANCE, 2147483647, 2.0f,
       new OwoItemSettings().group(ExampleMod.INSTRUMENTS_GROUP).rarity(Rarity.EPIC));
-  public static final Item raw_zinc = new Item(new OwoItemSettings());
-  public static final Item raw_tungsten = new Item(new OwoItemSettings());
-  public static final Item raw_aluminium = new Item(new OwoItemSettings());
-  public static final Item raw_lead = new Item(new OwoItemSettings());
-  public static final Item raw_tin = new Item(new OwoItemSettings());
-  public static final Item zinc_ingot = new Item(new OwoItemSettings());
-  public static final Item tungsten_ingot = new Item(new OwoItemSettings());
-  public static final Item aluminium_ingot = new Item(new OwoItemSettings());
-  public static final Item lead_ingot = new Item(new OwoItemSettings());
-  public static final Item tin_ingot = new Item(new OwoItemSettings());
+  public static final Item raw_zinc = new Item(settMat);
+  public static final Item raw_tungsten = new Item(settMat);
+  public static final Item raw_aluminium = new Item(settMat);
+  public static final Item raw_lead = new Item(settMat);
+  public static final Item raw_tin = new Item(settMat);
+  public static final Item zinc_ingot = new Item(settMat);
+  public static final Item tungsten_ingot = new Item(settMat);
+  public static final Item aluminium_ingot = new Item(settMat);
+  public static final Item lead_ingot = new Item(settMat);
+  public static final Item tin_ingot = new Item(settMat);
 }

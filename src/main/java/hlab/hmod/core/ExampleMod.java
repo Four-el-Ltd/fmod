@@ -25,6 +25,8 @@ public class ExampleMod implements ModInitializer {
 	public static final String MODID = "hmod-core";
 	public static final OwoItemGroup INSTRUMENTS_GROUP = OwoItemGroup.builder(new Identifier(MODID, "instruments"),
 			() -> Icon.of(new ItemStack(Items.IRON_PICKAXE))).build();
+	public static final OwoItemGroup MATERIALS_GROUP = OwoItemGroup
+			.builder(new Identifier(MODID, "materials"), () -> Icon.of(ModItems.raw_tin)).build();
 	// public static CommandDispatcher<ServerCommandSource> commandDispatcher = new
 	// CommandDispatcher<>();
 
@@ -38,6 +40,7 @@ public class ExampleMod implements ModInitializer {
 
 		LOGGER.info("H-mod started");
 		INSTRUMENTS_GROUP.initialize();
+		MATERIALS_GROUP.initialize();
 		FieldRegistrationHandler.register(ModItems.class, MODID, false);
 		FieldRegistrationHandler.register(ModBlocks.class, MODID, false);
 		CommandRegistrationCallback.EVENT
