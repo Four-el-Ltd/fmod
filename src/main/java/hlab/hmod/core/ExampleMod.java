@@ -18,7 +18,7 @@ import io.wispforest.owo.registration.reflect.FieldRegistrationHandler;
 import hlab.hmod.core.blocks.ModBlocks;
 import hlab.hmod.core.commands.ModCommands;
 import hlab.hmod.core.registry.ModItems;
-import hlab.hmod.core.world.dimensions.ModDimensions;
+import hlab.hmod.core.dimensions.ModDimensions;
 
 public class ExampleMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("hmod-core");

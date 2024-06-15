@@ -1,6 +1,7 @@
 package hlab.hmod.core.blocks;
 
 import hlab.hmod.core.blocks.generic.ores.TinOre;
+import hlab.hmod.core.blocks.machines.BlastFurnace;
 import io.wispforest.owo.registration.reflect.BlockRegistryContainer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -27,6 +28,7 @@ public class ModBlocks implements BlockRegistryContainer {
   };
 
   public static final TinOre tin_ore = new TinOre(FabricBlockSettings.create().requiresTool());
+  public static final BlastFurnace blast_furnace = new BlastFurnace(FabricBlockSettings.create());
 
   @Override
   public BlockItem createBlockItem(Block block, String identifier) {

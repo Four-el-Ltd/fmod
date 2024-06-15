@@ -27,11 +27,13 @@ public class ModCommands {
     dispatcher.register(literal("setsanity")
         .then(argument("amount", integer(0, 20))
             .executes(ctx -> {
-              PlayerEntity player = ctx.getSource().getPlayer();
-              SanityManager sm = ((SanityManagerAccesor) player).getSanityManager();
-              sm.setSanity(getInteger(ctx, "amount"));
-              ctx.getSource().sendMessage(Text.of("Команд компмлитет епта"));
-              return 1;
+                ServerPlayerEntity player = ctx.getSource().getPlayer();
+                if(player == null ) return 1;
+                SanityManager sm = ((SanityManagerAccesor) player).getSanityManager();
+                sm.setSanity(getInteger(ctx, "amount"));
+
+                ctx.getSource().sendMessage(Text.of("Команд компмлитет епта"));
+                return 1;
 
             })));
   }

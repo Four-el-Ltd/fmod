@@ -1,4 +1,4 @@
-package hlab.hmod.core.world.dimensions;
+package hlab.hmod.core.dimensions;
 
 import hlab.hmod.core.ExampleMod;
 import net.minecraft.registry.RegistryKey;

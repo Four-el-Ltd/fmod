@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin extends LivingEntity implements SanityManagerAccesor {
-  private SanityManager sanityManager = new SanityManager();
+  private final SanityManager sanityManager = new SanityManager();
 
   protected PlayerEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
     super(entityType, world);
